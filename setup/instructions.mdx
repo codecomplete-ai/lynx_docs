@@ -1,0 +1,93 @@
+---
+title: 'Add Instructions'
+description: 'Set up instructions for Lynx to understand your environment and perform actions.'
+---
+
+## Organization Instructions
+Organization admins can define instructions that apply to all users.
+1. Navigate to Settings > Instructions > Organization Instructions
+2. Use provided templates or create custom instructions
+3. Click "Add Instruction" for new entries
+
+### Sample Organization Instructions
+
+**AWS**
+```
+Standard AWS Investigation Steps:
+1. Check CloudWatch metrics for affected services
+2. Review recent deployments in CodePipeline
+3. Examine ECS/EKS cluster health
+4. Verify Auto Scaling Group behavior
+5. Check Security Group and NACLs for network issues
+
+Important AWS Services:
+- Production VPC: prod-vpc-01
+- Main Load Balancer: prod-alb-01
+- Primary Database: prod-rds-01
+```
+
+**DB**
+```
+Database Investigation Protocol:
+1. Check connection pool metrics
+2. Verify replication lag
+3. Review slow query logs
+4. Examine table locks
+5. Check disk usage and IOPS
+
+Critical Databases:
+- Primary: db-master-01.prod
+- Read Replicas: db-read-01.prod, db-read-02.prod
+- Analytics: db-analytics-01.prod
+```
+
+## User Instructions
+Individual users can set personal instructions:
+
+1. Navigate to Settings > Instructions > User Instructions
+2. Add investigation preferences and shortcuts
+3. Configure commonly used tools and commands
+
+### Sample User Instructions
+
+```
+My Investigation Preferences:
+1. Check service logs first
+2. Review recent deployments
+3. Examine metrics and dashboards
+4. Check similar past incidents
+5. Document findings in real-time
+
+Commonly Used Tools:
+- Logs: CloudWatch Logs
+- Metrics: Datadog
+- Deployment: Jenkins
+- Documentation: Confluence
+```
+
+```
+My shortcuts:
+- `!aws` to run AWS commands
+- `!k8s` to run Kubernetes commands
+- `pygrep` to search python code
+```
+
+### Lynx Config
+When you first connect Lynx to your environment, Lynx will automatically generate a config file at `~/.lynxconfig` with details about your environment, including OS name and version, CLI tools, and more. 
+
+You can edit this config file directly on your machine to further customize your Lynx experience.
+
+We recommend specifying an absolute path to your codebase in your lynxconfig file or user instructions to help Lynx find your codebase.
+
+Example config:
+```yaml
+## Lynx Generated Keys
+## Do not edit
+os_name=Ubuntu
+os_version=22.04.5 LTS (Jammy Jellyfish)
+aws_cli_version=aws-cli/2.22.12
+
+## User Generated Keys
+## Add values here
+codebase_dir=/home/ubuntu/myapp
+```

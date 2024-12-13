@@ -1,0 +1,30 @@
+---
+title: 'Investigations'
+description: ''
+---
+
+## Sessions
+In order to connect to your environment within an investigation, you need to create a session. Sessions are created automatically when you start an investigation.
+
+You can also manually create and manage sessions from the "Sessions" page (by clicking on your username in the top right corner) or directly from the investigation page.
+
+Lynx supports up to 4 concurrent sessions per user.
+
+## Command Execution
+Lynx supports running commands in your environment within an investigation:
+
+### Chain of Thought:
+Lynx gathers context for an investigation by executing commands in your environment in a chain of thought style, where each command is executed in order and the output of each command is used as input to generate the next command and assist with the investigation.
+
+There are different modes of chain of thought execution:
+- Auto: Lynx automatically executes commands in chain of thought mode without user intervention.
+- Manual: Lynx will prompt you to approve, edit, or reject each command in chain of thought mode.
+- Off: Lynx will not execute commands in chain of thought mode.
+
+You can set a default command mode for chain of thought execution in your user settings.
+
+### Suggested Commands:
+After each assistant response, Lynx suggests commands to run in your environment based on the investigation context.
+
+### Manual:
+You can manually execute commands in "command mode" by typing `!` in the input field and clicking "Execute". 
