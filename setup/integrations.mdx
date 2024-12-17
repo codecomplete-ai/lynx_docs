@@ -52,10 +52,11 @@ In PagerDuty:
     - Services: Read
     - Teams: Read
     - Users: Read
-  3. Copy the API key
+  3. Copy the API key into the `API token` input field in the organization Pagerduty settings.
   4. Go to Webhooks > Create New Webhook
-  5. Set the webhook URL to your Lynx endpoint
-  6. Copy the webhook signing secret
+  5. Set the webhook URL `https://svc.uselynx.ai/api/v1/webhook/pagerduty` to your Lynx endpoint
+  6. Add a custom header `X-LYNX-API` with the value `<Lynx API Token>` found on the Organization Settings Page.
+  7. Copy the webhook signing secret into the `Webhook Signature` input field in the organization Pagerduty settings.
 
 In Lynx:
   1. Navigate to Settings > Organization Settings
