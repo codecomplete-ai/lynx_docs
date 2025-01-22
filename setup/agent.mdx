@@ -5,7 +5,20 @@ description: 'Set up local agent so lynx can run command, look at your code and 
 
 ## Local Agent Downloading 
 
-WIP
+Download the agent binary for Linux or macOS below. 
+
+| **OS**   | **Architecture** | **Download Command**                                                                 |
+|----------|------------------|--------------------------------------------------------------------------------------|
+| Ubuntu    | x64 (Intel/AMD)  | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_x64_lynx.bin -O lynx.bin` |
+| Ubuntu    | arm64 (ARM)      | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_arm64_lynx.bin -O lynx.bin` |
+
+
+### Running the Agent
+After downloading, make the binary executable and run it:
+```bash
+chmod +x lynx.bin
+./lynx.bin
+```
 
 ## Usage
 Run the downloaded program `./lynx.bin` before starting any investigation.
