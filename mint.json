@@ -45,7 +45,8 @@
       "group": "Setup",
       "pages": [
         "setup/integrations",
-        "setup/instructions"
+        "setup/instructions",
+        "setup/agent"
       ]
     },
     {
