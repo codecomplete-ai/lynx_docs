@@ -24,9 +24,12 @@ chmod +x lynx.bin
 Run the downloaded program `./lynx.bin` before starting any investigation.
 
 ## Authentication
-1. Navigate to Setting > to create Lynx private key.
-2. Store `LYNX_SECRET_ACCESS_KEY` and `LYNX_SECRET_ACCESS_ID` to `~/lynx/credentials` file.
-
+1. Run command 
+```bash
+./lynx.bin configure
+```
+2. Generate credential key pair on web by clicking `Generate credential key pair` under `User Settings`.
+3. Copy `LYNX_SECRET_ACCESS_ID` and `LYNX_SECRET_ACCESS_KEY` back to lynx. 
 
 ### Lynx Config
 When you first connect Lynx to your environment, Lynx will automatically generate a config file at `~/.lynx/config` with details about your environment, including OS name and version, CLI tools, and more. 
