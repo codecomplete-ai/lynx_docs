@@ -11,24 +11,24 @@ Download the agent binary for Linux or macOS below. Windows support will come sh
 
 | **OS**   | **Architecture** | **Download Command**                                                                 |
 |----------|------------------|--------------------------------------------------------------------------------------|
-| Ubuntu    | x64 (Intel/AMD)  | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_x64_lynx.bin -O lynx.bin` |
-| Ubuntu    | arm64 (ARM)      | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_arm64_lynx.bin -O lynx.bin` |
+| Ubuntu    | x64 (Intel/AMD)  | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_x64_lynx.bin -O lynx` |
+| Ubuntu    | arm64 (ARM)      | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_arm64_lynx.bin -O lynx` |
 
 
 ### Running the Agent
 After downloading, make the binary executable and run it:
 ```bash
-chmod +x lynx.bin
-./lynx.bin
+chmod +x lynx
+./lynx
 ```
 
 ## Usage
-Run the downloaded program `./lynx.bin` before starting any investigation.
+Run the downloaded program `./lynx` before starting any investigation.
 
 ## Authentication
 1. Run command 
 ```bash
-./lynx.bin configure
+./lynx configure
 ```
 2. Generate credential key pair on web by clicking `Generate credential key pair` under `User Settings`.
 3. Copy `LYNX_SECRET_ACCESS_ID` and `LYNX_SECRET_ACCESS_KEY` back to lynx. 
