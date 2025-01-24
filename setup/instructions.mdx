@@ -71,3 +71,23 @@ My shortcuts:
 - `!k8s` to run Kubernetes commands
 - `pygrep` to search python code
 ```
+
+### Lynx Config
+When you first connect Lynx to your environment, Lynx will automatically generate a config file at `~/.lynxconfig` with details about your environment, including OS name and version, CLI tools, and more. 
+
+You can edit this config file directly on your machine to further customize your Lynx experience.
+
+We recommend specifying an absolute path to your codebase in your lynxconfig file or user instructions to help Lynx find your codebase.
+
+Example config:
+```yaml
+## Lynx Generated Keys
+## Do not edit
+os_name=Ubuntu
+os_version=22.04.5 LTS (Jammy Jellyfish)
+aws_cli_version=aws-cli/2.22.12
+
+## User Generated Keys
+## Add values here
+codebase_dir=/home/ubuntu/myapp
+```
