@@ -1,7 +1,40 @@
 ---
 title: 'Add Integrations'
-description: 'Set up integrations with Pagerduty, and other tools so Lynx can plug into your workflows.'
+description: 'Set up integrations with cloud providers, Pagerduty, and other tools so Lynx can plug into your workflows.'
 ---
+
+## Cloud Provider Integrations
+Lynx integrates with cloud providers to enable secure command execution during incident investigations. Currently supported:
+- AWS (Public Beta)
+- GCP and Azure (Contact Lynx representative for access)
+
+### AWS Integration
+
+#### Organization Setup
+Prerequisites
+- AWS IAM permissions for role creation
+- Lynx Organization Admin access
+
+Steps
+
+1. Create an IAM role in your AWS account using the trust policy below.
+2. Navigate to Settings > Organization Settings in Lynx
+3. Enable AWS Integration and enter your Role ARN
+
+We provide a setup [script](/setup/provision_ssm_iam_script) to automate the IAM role creation process.
+
+##### Instance Requirements
+- EC2 instances must have an IAM instance profile with the `AmazonSSMManagedInstanceCore` [policy](/setup/ssm_policy)
+- Systems Manager (SSM) agent must be [installed and running](https://docs.aws.amazon.com/systems-manager/latest/userguide/manually-install-ssm-agent-linux.html)
+
+
+#### User Setup
+1. In Lynx, go to Settings > User Settings
+2. Configure AWS Instance Profile:
+   - AWS Instance ID (e.g. i-01234567890abcdef0)
+   - AWS Region (e.g. us-east-1)
+   - Username (output of `whoami`)
+3. Click "Submit"
 
 ## PagerDuty Integration
 Lynx integrates with PagerDuty to automatically pull in sync incidents.
