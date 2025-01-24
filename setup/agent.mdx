@@ -14,35 +14,35 @@ Download the agent binary for Linux or macOS below. Windows support will come sh
 | Ubuntu    | x64 (Intel/AMD)  | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_x64_lynx.bin -O lynx` |
 | Ubuntu    | arm64 (ARM)      | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_arm64_lynx.bin -O lynx` |
 
-
-### Running the Agent
-After downloading, make the binary executable and run it:
-```bash
-chmod +x lynx
-./lynx
-```
-
 ## Usage
-Run the downloaded program `./lynx` before starting any investigation.
 
-If you want to run in detach mode, you can use screen or tmux to keep the connection open.
+### Authentication
 
-## Authentication
-1. Run command 
+1. Run command
+
 ```bash
 ./lynx configure
 ```
+
 2. Generate credential key pair on web by clicking `Generate credential key pair` under `User Settings`.
-3. Copy `LYNX_SECRET_ACCESS_ID` and `LYNX_SECRET_ACCESS_KEY` back to lynx. 
+3. Copy `LYNX_SECRET_ACCESS_ID` and `LYNX_SECRET_ACCESS_KEY` back to lynx.
+
+### Running Lynx Agent
+
+Run the downloaded program `./lynx` before starting any investigation.
+
+We recommend starting lynx agent in a screen or tmux shell so you do not have to run lynx every time you start any investigation.
 
 ### Lynx Config
-When you first connect Lynx to your environment, Lynx will automatically generate a config file at `~/.lynx/config` with details about your environment, including OS name and version, CLI tools, and more. 
+
+When you first connect Lynx to your environment, Lynx will automatically generate a config file at `~/.lynx/config` with details about your environment, including OS name and version, CLI tools, and more.
 
 You can edit this config file directly on your machine to further customize your Lynx experience.
 
 We recommend specifying an absolute path to your codebase in your lynxconfig file or user instructions to help Lynx find your codebase.
 
 Example config:
+
 ```yaml
 ## Lynx Generated Keys
 ## Do not edit
