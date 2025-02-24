@@ -11,8 +11,8 @@ Download the agent binary for Linux or macOS below. Windows support will come sh
 
 | **OS**   | **Architecture** | **Download Command**                                                                 |
 |----------|------------------|--------------------------------------------------------------------------------------|
-| Ubuntu    | x64 (Intel/AMD)  | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_x64_lynx.bin -O lynx` |
-| Ubuntu    | arm64 (ARM)      | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_arm64_lynx.bin -O lynx` |
+| Ubuntu    | x64 (Intel/AMD)  | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_x64_lynx.bin -O lynx_agent` |
+| Ubuntu    | arm64 (ARM)      | `wget https://lynx-agent.s3.us-west-2.amazonaws.com/0.0.0/ubuntu/ubuntu_arm64_lynx.bin -O lynx_agent` |
 
 ## Usage
 
@@ -21,7 +21,8 @@ Download the agent binary for Linux or macOS below. Windows support will come sh
 1. Run command
 
 ```bash
-./lynx configure
+chmod +x ./lynx_agent
+./lynx_agent configure
 ```
 
 2. Generate credential key pair on web by clicking `Generate credential key pair` under `User Settings`.
@@ -29,7 +30,7 @@ Download the agent binary for Linux or macOS below. Windows support will come sh
 
 ### Running Lynx Agent
 
-Run the downloaded program `./lynx` before starting any investigation.
+Run the downloaded program `./lynx_agent` before starting any investigation.
 
 We recommend starting Lynx agent in a screen or tmux shell so you do not have to run Lynx every time you start any investigation.
 

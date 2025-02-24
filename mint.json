@@ -46,7 +46,8 @@
       "group": "Usage",
       "pages": [
         "usage/incidents",
-        "usage/investigations"
+        "usage/investigations",
+        "usage/runbooks"
       ]
     }
   ],

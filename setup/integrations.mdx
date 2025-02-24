@@ -4,7 +4,7 @@ description: 'Set up integrations with Pagerduty and other tools so Lynx can plu
 ---
 
 ## PagerDuty Integration
-Lynx integrates with PagerDuty to automatically pull in sync incidents.
+Lynx integrates with PagerDuty to automatically sync incidents.
 
 ### Prerequisites
 - PagerDuty Admin access
@@ -27,6 +27,38 @@ In PagerDuty:
 
 In Lynx:
   1. Navigate to Settings > Organization Settings
-  2. Enable PagerDuty Integration
+  2. Check `Enable PagerDuty Integration`
   3. Paste your API key
   4. Paste the webhook signing secret
+
+## Jira Integration
+Lynx integrates with Jira to automatically sync issues.
+
+### Prerequisites
+- Jira Project Admin access
+- Lynx Organization Admin access
+
+### Setup
+
+Create Jira automation rules to trigger Lynx when an issue is created, updated, or closed.
+In Jira:
+  1. Navigate to Automation settings:
+    - Project level: `Project Settings > Automation`
+    - Global level: `System Settings > Global Automation`
+  2. Click `Create rule` to create a new automation rule.
+  3. Set the following attributes:
+    - `Trigger` to `Field value changed`.
+    - `Fields to monitor for changes` to  `Assignee`, `Description`, `Summary`
+    - `Change type` to `Any changes to the field value`
+    - `For` to `All issue operations`
+  4. Click `Add an action` and set the action to `Send web request`.
+  5. Set the following attributes and validate the web request configuration
+    - `Web request URL` to `https://svc.uselynx.ai/api/v1/webhook/jira`
+    - `Web request method` to `POST`
+    - `Web request body` to `Issue data (Jira format)`
+    - `Web request headers` to `X-LYNX-API` with the value `<Lynx API Token>` found on the Organization Settings Page. Ensure `Hidden` is checked.
+  6. Click `Turn on rule` to enable the integration.
+
+In Lynx:
+  1. Navigate to Settings > Organization Settings
+  2. Check `Enable Jira Integration`
